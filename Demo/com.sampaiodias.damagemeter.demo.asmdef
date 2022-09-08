@@ -1,0 +1,16 @@
+{
+    "name": "com.sampaiodias.damagemeter.demo",
+    "rootNamespace": "",
+    "references": [
+        "GUID:00d1c39fc810c314eb08c960be150d40"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

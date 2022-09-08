@@ -1,0 +1,25 @@
+{
+  "name": "com.sampaiodias.damage-meter",
+  "version": "0.1.0",
+  "displayName": "Damage Meter",
+  "description": "Simple damage meter UI to show how much DPS your player is doing.",
+  "unity": "2020.3",
+  "unityRelease": "0f1",
+  "documentationUrl": "https://github.com/sampaiodias/damage-meter",
+  "changelogUrl": "https://github.com/sampaiodias/damage-meter",
+  "licensesUrl": "https://github.com/sampaiodias/damage-meter",
+  "dependencies": {
+    "com.unity.textmeshpro": "3.0.6"
+  },
+  "keywords": [
+    "damage meter",
+    "dps",
+    "rpg"
+  ],
+  "author": {
+    "name": "Lucas Sampaio Dias",
+    "email": "lucassampaiodias@gmail.com",
+    "url": "https://github.com/sampaiodias"
+  },
+  "type": "tool"
+}
