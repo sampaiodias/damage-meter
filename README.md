@@ -11,7 +11,7 @@ This is a Unity Package. To install, go to the Package Manager window, click on 
 https://github.com/sampaiodias/damage-meter.git
 ```
 
-_Requires TextMeshPro._
+_Requires Unity 2020.3+ and TextMeshPro._
 
 ## Features
 - Show DPS numbers in a compact UI (similar to damage meter addons for World of Warcraft).
