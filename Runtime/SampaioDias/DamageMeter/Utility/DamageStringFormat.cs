@@ -53,5 +53,13 @@ namespace SampaioDias.DamageMeter.Utility
                 this.textLayout = textLayout;
             }
         }
+        
+        public static string SkillDamageText(DamageLogComputedValues eventValues, float percentage, DamageStringFormat.DamageNumberOptions options)
+        {
+            return options.textLayout
+                .Replace("DPS", DamageStringFormat.Format(eventValues.DamagePerSecond, options))
+                .Replace("TOTAL", DamageStringFormat.Format(eventValues.TotalDamage, options))
+                .Replace("PERCENT", $"{(percentage * 100).ToString(options.toStringFormatter)}%");
+        }
     }
 }

@@ -47,6 +47,17 @@ namespace SampaioDias.DamageMeter
                 data.Logs.Add(log);
                 data.Values.TotalDamage += log.DamageAmount;
                 data.Values.DamagePerSecond = data.Values.TotalDamage / TotalSeconds;
+
+                if (string.IsNullOrEmpty(log.SubCategory)) continue;
+                
+                if (!data.SubCategoryValues.ContainsKey(log.SubCategory))
+                {
+                    data.SubCategoryValues.Add(log.SubCategory, new DamageLogComputedValues());
+                }
+
+                var subValues = data.SubCategoryValues[log.SubCategory];
+                subValues.TotalDamage += log.DamageAmount;
+                subValues.DamagePerSecond = subValues.TotalDamage / TotalSeconds;
             }
             _uncomputedLogs.Clear();
         }
