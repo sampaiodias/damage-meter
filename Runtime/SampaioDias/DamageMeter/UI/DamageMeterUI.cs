@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace SampaioDias.DamageMeter.UI
 {
@@ -19,6 +20,7 @@ namespace SampaioDias.DamageMeter.UI
         public GameObject barPrefab;
         public GameObject content;
         public CanvasGroup canvasGroup;
+        public ScrollRect scrollView;
 
         private Dictionary<string, DamageBarUI> _barDictionary;
 
@@ -61,7 +63,7 @@ namespace SampaioDias.DamageMeter.UI
             var newBar = newBarGameObject.GetComponent<DamageBarUI>();
             newBarGameObject.name = $"DamageBar - {skillData.ID}";
             _barDictionary.Add(skillData.ID, newBar);
-            newBar.Initialize(skillData, manager, this);
+            newBar.Initialize(skillData, manager, this, scrollView);
         }
         
         private void ValuesUpdated(List<DamageLogWrapper> newValues)

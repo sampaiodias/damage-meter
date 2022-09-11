@@ -628,6 +628,7 @@ MonoBehaviour:
   skillDamage: {fileID: 3343961533571206429}
   icon: {fileID: 7726039190772424925}
   bar: {fileID: 3400156284871242476}
+  trigger: {fileID: 8964875707481431676}
   details: {fileID: 8206435921236290513}
 --- !u!114 &8964875707481431676
 MonoBehaviour:
