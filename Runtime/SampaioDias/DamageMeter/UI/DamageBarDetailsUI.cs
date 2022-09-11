@@ -49,23 +49,26 @@ namespace SampaioDias.DamageMeter.UI
             {
                 _texts[i].gameObject.SetActive(false);
             }
+
+            OrderTexts();
         }
 
         private int UpdateTexts(DamageLogWrapper myWrapper)
         {
             var firstText = _texts[0];
-            firstText.textTitle.text = $"{myWrapper.SkillData.Name} ({myWrapper.Values.Count})";
-            firstText.textNumbers.text = $"{DamageStringFormat.SkillDamageText(myWrapper.Values, 1, _manager.formatOptions)}";
-            firstText.gameObject.SetActive(true);
+            firstText.UpdateText(
+                $"{myWrapper.SkillData.Name} ({myWrapper.Values.Count})", 
+                $"{DamageStringFormat.SkillDamageText(myWrapper.Values, 1, _manager.formatOptions)}",
+                myWrapper.Values);
 
             var index = 1;
             foreach (var subCategoryKeyPair in myWrapper.SubCategoryValues)
             {
                 var text = _texts[index];
-                text.textTitle.text = $"{subCategoryKeyPair.Key} ({subCategoryKeyPair.Value.Count})";
-                text.textNumbers.text =
-                    $"{DamageStringFormat.SkillDamageText(subCategoryKeyPair.Value, (float)(subCategoryKeyPair.Value.TotalDamage / myWrapper.Values.TotalDamage), _manager.formatOptions)}";
-                text.gameObject.SetActive(true);
+                text.UpdateText(
+                    $"{subCategoryKeyPair.Key} ({subCategoryKeyPair.Value.Count})",
+                    $"{DamageStringFormat.SkillDamageText(subCategoryKeyPair.Value, (float)(subCategoryKeyPair.Value.TotalDamage / myWrapper.Values.TotalDamage), _manager.formatOptions)}",
+                    subCategoryKeyPair.Value);
                 index++;
             }
 
@@ -78,6 +81,15 @@ namespace SampaioDias.DamageMeter.UI
             for (var i = 0; i < missingTexts; i++)
             {
                 _texts.Add(Instantiate(wrapperPrefab, textParent).GetComponent<DamageBarDetailsWrapperUI>());
+            }
+        }
+        
+        private void OrderTexts()
+        {
+            var orderedTexts = _texts.OrderBy(t => t.currentValue.TotalDamage);
+            foreach (var t in orderedTexts)
+            {
+                t.transform.SetSiblingIndex(0);
             }
         }
     }
