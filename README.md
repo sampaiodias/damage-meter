@@ -1,5 +1,7 @@
 # Damage Meter
 
+![Version](https://img.shields.io/github/package-json/v/sampaiodias/damage-meter) ![Version](https://img.shields.io/badge/license-MIT-brightgreen)
+
 Simple damage meter UI to show how much DPS your player is doing.
 
 ![screenshot](https://i.imgur.com/phCRpVe.png)
@@ -16,6 +18,7 @@ _Requires Unity 2020.3+ and TextMeshPro._
 ## Features
 - Show DPS numbers in a compact UI (similar to damage meter addons for World of Warcraft).
 - Change how numbers are reported with a simple string layout.
+- Mouse over damage bars to show additional information.
 - Pause, resume and reset current reports.
 - Add hotkeys to toggle the visibility of the UI.
 - Change the appearance of anything on the UI, such as fonts and sizes: everything is made with Unity's default GUI.
