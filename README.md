@@ -1,6 +1,6 @@
 # Damage Meter
 
-![Version](https://img.shields.io/github/package-json/v/sampaiodias/damage-meter) ![Version](https://img.shields.io/badge/license-MIT-brightgreen)
+![Version](https://img.shields.io/badge/version-0.2.0-blue) ![Version](https://img.shields.io/badge/license-MIT-brightgreen)
 
 Simple damage meter UI to show how much DPS your player is doing.
 
