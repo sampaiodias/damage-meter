@@ -7,11 +7,16 @@ namespace SampaioDias.DamageMeter.UI
 {
     public class DamageMeterUI : MonoBehaviour
     {
+        [Tooltip("When enabled, mousing over the bars will display additional information.")]
+        public bool enableMouseOver = true;
+        [Tooltip("List of keys that, when pressed, will show/hide this panel.")]
+        public List<KeyCode> toggleVisibilityHotkeys = new List<KeyCode>() { KeyCode.F12 };
+        
+        [Space]
         public DamageMeterManager manager;
         public GameObject barPrefab;
         public GameObject content;
         public CanvasGroup canvasGroup;
-        public List<KeyCode> toggleVisibilityHotkeys = new List<KeyCode>() { KeyCode.F12 };
 
         private Dictionary<string, DamageBarUI> _barDictionary;
 
@@ -54,7 +59,7 @@ namespace SampaioDias.DamageMeter.UI
             var newBar = newBarGameObject.GetComponent<DamageBarUI>();
             newBarGameObject.name = $"DamageBar - {skillData.ID}";
             _barDictionary.Add(skillData.ID, newBar);
-            newBar.Initialize(skillData, manager);
+            newBar.Initialize(skillData, manager, this);
         }
         
         private void ValuesUpdated(List<DamageLogWrapper> newValues)

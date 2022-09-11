@@ -16,18 +16,22 @@ namespace SampaioDias.DamageMeter.UI
         
         private SkillData _event;
         private DamageMeterManager _manager;
+        private DamageMeterUI _damageMeterUI;
         private List<DamageBarDetailsWrapperUI> _texts;
 
-        public void Initialize(SkillData skillData, DamageMeterManager manager)
+        public void Initialize(SkillData skillData, DamageMeterManager manager, DamageMeterUI damageMeterUI)
         {
             _event = skillData;
             _manager = manager;
+            _damageMeterUI = damageMeterUI;
             _texts ??= new List<DamageBarDetailsWrapperUI>();
             _manager.OnUpdateValues += UpdateTexts;
         }
 
         public void Show()
         {
+            if (!_damageMeterUI.enableMouseOver) return;
+            
             canvasGroup.alpha = 1;
             UpdateTexts(_manager.CurrentValues);
         }

@@ -17,14 +17,16 @@ namespace SampaioDias.DamageMeter.UI
 
         private SkillData _event;
         private DamageMeterManager _manager;
+        private DamageMeterUI _damageMeterUI;
 
-        public void Initialize(SkillData skillData, DamageMeterManager manager)
+        public void Initialize(SkillData skillData, DamageMeterManager manager, DamageMeterUI damageMeterUI)
         {
             _event = skillData;
             _manager = manager;
             skillName.text = _event.Name;
             icon.sprite = _event.Icon;
-            details.Initialize(skillData, manager);
+            _damageMeterUI = damageMeterUI;
+            details.Initialize(skillData, manager, damageMeterUI);
         }
 
         public void UpdateBar(DamageLogWrapper wrapper, int index, float fillPercentage)
