@@ -23,11 +23,13 @@ namespace SampaioDias.DamageMeter.UI
             _event = skillData;
             _manager = manager;
             _texts ??= new List<DamageBarDetailsWrapperUI>();
+            _manager.OnUpdateValues += UpdateTexts;
         }
 
         public void Show()
         {
             canvasGroup.alpha = 1;
+            UpdateTexts(_manager.CurrentValues);
         }
 
         public void Hide()
@@ -35,11 +37,24 @@ namespace SampaioDias.DamageMeter.UI
             canvasGroup.alpha = 0;
         }
 
-        private void Update()
+        private void OnEnable()
+        {
+            if (_manager != null)
+            {
+                _manager.OnUpdateValues += UpdateTexts;
+            }
+        }
+        
+        private void OnDisable()
+        {
+            _manager.OnUpdateValues -= UpdateTexts;
+        }
+
+        private void UpdateTexts(List<DamageLogWrapper> values)
         {
             if (!(canvasGroup.alpha > 0)) return;
             
-            var myWrapper = _manager.CurrentValues.Find(wrapper => wrapper.SkillData.ID == _event.ID);
+            var myWrapper = values.Find(wrapper => wrapper.SkillData.ID == _event.ID);
             
             InstantiateMissingTextWrappers(myWrapper);
 
