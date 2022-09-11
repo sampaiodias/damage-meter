@@ -1,6 +1,6 @@
 {
   "name": "com.sampaiodias.damage-meter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "displayName": "Damage Meter",
   "description": "Simple damage meter UI to show how much DPS your player is doing.",
   "unity": "2020.3",

@@ -299,7 +299,7 @@ RectTransform:
   - {fileID: 8525495}
   - {fileID: 213735433}
   m_Father: {fileID: 5573253374350431339}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -1220,7 +1220,7 @@ RectTransform:
   - {fileID: 5573253374228553824}
   - {fileID: 5573253372990109107}
   m_Father: {fileID: 5573253374350431339}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1527,8 +1527,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5573253373860670664}
   - {fileID: 551627876}
+  - {fileID: 5573253373860670664}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1587,11 +1587,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5899ace914ac435ea0f3c4e69a787f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableMouseOver: 1
+  mouseOverSkillCount: 1
+  toggleVisibilityHotkeys: 25010000
   manager: {fileID: 0}
   barPrefab: {fileID: 8542867580611831789, guid: c3ca684bf54872946a5bd4205debe7eb, type: 3}
   content: {fileID: 5573253373356892478}
   canvasGroup: {fileID: 7380599061877591087}
-  toggleVisibilityHotkeys: 25010000
+  scrollView: {fileID: 5573253373860670663}
 --- !u!225 &7380599061877591087
 CanvasGroup:
   m_ObjectHideFlags: 0

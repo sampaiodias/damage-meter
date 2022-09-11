@@ -30,6 +30,13 @@ namespace SampaioDias.DamageMeter.Demo
                     var subCategory = isCriticalStrike ? "Critical Strike" : "";
                     var randomAmountOfDamage = Random.Range(1, 20 - index) * (isCriticalStrike ? 2 : 1);
                     
+                    var isMegaCriticalStrike = Random.Range(1, 100) >= 99;
+                    if (!isCriticalStrike && isMegaCriticalStrike)
+                    {
+                        subCategory = "Mega Critical Strike";
+                        randomAmountOfDamage *= 3;
+                    }
+                    
                     manager.Register(skill, randomAmountOfDamage, subCategory); // This is the important part
                 }
             }

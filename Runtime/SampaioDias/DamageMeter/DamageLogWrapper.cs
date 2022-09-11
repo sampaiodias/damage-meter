@@ -7,12 +7,14 @@ namespace SampaioDias.DamageMeter
         public SkillData SkillData;
         public List<DamageLog> Logs;
         public DamageLogComputedValues Values;
+        public Dictionary<string, DamageLogComputedValues> SubCategoryValues;
 
         public DamageLogWrapper(SkillData skillData)
         {
             SkillData = skillData;
             Logs = new List<DamageLog>();
             Values = new DamageLogComputedValues();
+            SubCategoryValues = new Dictionary<string, DamageLogComputedValues>();
         }
     }
 }
