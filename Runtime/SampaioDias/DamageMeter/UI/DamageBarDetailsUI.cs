@@ -76,7 +76,7 @@ namespace SampaioDias.DamageMeter.UI
         {
             var firstText = _texts[0];
             firstText.UpdateText(
-                $"{myWrapper.SkillData.Name} ({myWrapper.Values.Count})", 
+                $"{myWrapper.SkillData.Name}{(_damageMeterUI.mouseOverSkillCount ? $" ({myWrapper.Values.Count})" : "")}", 
                 $"{DamageStringFormat.SkillDamageText(myWrapper.Values, 1, _manager.formatOptions)}",
                 myWrapper.Values);
 
@@ -85,7 +85,7 @@ namespace SampaioDias.DamageMeter.UI
             {
                 var text = _texts[index];
                 text.UpdateText(
-                    $"{subCategoryKeyPair.Key} ({subCategoryKeyPair.Value.Count})",
+                    $"{subCategoryKeyPair.Key}{(_damageMeterUI.mouseOverSkillCount ? $" ({subCategoryKeyPair.Value.Count})" : "")}",
                     $"{DamageStringFormat.SkillDamageText(subCategoryKeyPair.Value, (float)(subCategoryKeyPair.Value.TotalDamage / myWrapper.Values.TotalDamage), _manager.formatOptions)}",
                     subCategoryKeyPair.Value);
                 index++;

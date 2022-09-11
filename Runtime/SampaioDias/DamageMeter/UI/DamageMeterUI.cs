@@ -9,6 +9,8 @@ namespace SampaioDias.DamageMeter.UI
     {
         [Tooltip("When enabled, mousing over the bars will display additional information.")]
         public bool enableMouseOver = true;
+        [Tooltip("When enabled, the name of the subcategory will be followed by its count (how many instances were logged for that subcategory).")]
+        public bool mouseOverSkillCount = true;
         [Tooltip("List of keys that, when pressed, will show/hide this panel.")]
         public List<KeyCode> toggleVisibilityHotkeys = new List<KeyCode>() { KeyCode.F12 };
         
